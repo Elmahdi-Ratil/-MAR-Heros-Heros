@@ -242,7 +242,7 @@ if (message.content.startsWith(PREFIX + 'setavatar')) {
 }
 });
 
-var prefix = '!';
+var prefix = '1';
 
 client.on('message', msg => {
 	if (msg.content.startsWith(prefix + 'help')) {
@@ -263,7 +263,7 @@ msg.author.send("Commands ستاتي " + `  **
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Mido King |`,"https://www.twitch.tv/lboghaz_kingheros")
+client.user.setGame(`Mido King | 1help`,"https://www.twitch.tv/lboghaz_kingheros")
   console.log('')
   console.log('')
   console.log('+[-----------------------------------------------------------------]+')
