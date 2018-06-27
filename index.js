@@ -8,7 +8,7 @@ const client = new Client({ disableEveryone: true });
 
 const GOOGLE_API_KEY = "AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8";
 
-const PREFIX = '!';
+const PREFIX = '1';
 
 
 const youtube = new YouTube(GOOGLE_API_KEY);
@@ -243,6 +243,23 @@ if (message.content.startsWith(PREFIX + 'setavatar')) {
 });
 
 var prefix = '!';
+
+client.on('message', msg => {
+	if (msg.content.startsWith(prefix + 'help')) {
+msg.author.send("Commands ستاتي " + `  **
+   "  : الاوامر "
+:headphones:  ${prefix}pl |اسم لاغنيه / رابط الاغنية
+:headphones:  ${prefix}skiللإنتقاال الى الاغنيه التاليه (\اذا كان هناك بقائمة الانتظار\
+:headphones:  ${prefix}sto|لأيقاف الموسيقى
+:headphones:  ${prefix}volum|لتغير حجم الصوت
+:headphones:  ${prefix}np | لإقاف الموسيقى مؤقتا
+:headphones:  ${prefix}resum|لاعادت تشغيل الاغنية الموجودة
+**`);
+ }
+});
+
+
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
