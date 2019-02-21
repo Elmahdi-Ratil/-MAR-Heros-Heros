@@ -8,15 +8,16 @@ const client = new Client({ disableEveryone: true });
 
 const GOOGLE_API_KEY = "AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8";
 
-const PREFIX = '1';
+const PREFIX = '2';
 
 
 const youtube = new YouTube(GOOGLE_API_KEY);
 
 const queue = new Map();
+
 client.on('ready', function() {
 	console.log(`i am ready ${client.user.username}`);
-    client.user.setGame(prefix + 'Mido King || 1help ');
+    client.user.setGame(prefix + 'Mido King || 2help ');
 });
 
 
@@ -30,6 +31,8 @@ client.on('ready', () => console.log('Yo this ready!'));
 // client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
 // client.on('reconnecting', () => console.log('I am reconnecting now!'));
+
+
 
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
@@ -133,9 +136,7 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 		let index = 0;
 		const embedqu = new Discord.RichEmbed()
 	.setDescription(`**Songs Queue**
-
 ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
-
 **الان يتم تشغيل** ${serverQueue.songs[0].title}`)
 		return msg.channel.sendEmbed(embedqu);
 	} else if (command === `stop`) {
@@ -225,7 +226,7 @@ client.on('message', message => {
   if (!message.content.startsWith(PREFIX)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== "381084760426020865") return;
+  if (message.author.id !== "461563821417431040") return;
 
 if (message.content.startsWith(PREFIX + 'setstream')) {
   client.user.setGame(argresult, "https://www.twitch.tv/darkknite55");
@@ -244,12 +245,11 @@ if (message.content.startsWith(PREFIX + 'setavatar')) {
 }
 });
 
-var prefix = '1';
+var prefix = '2';
 
 client.on('message', msg => {
 	if (msg.content.startsWith(prefix + 'help')) {
 msg.author.send("Commands ستاتي " + `  **
-
    "  : الاوامر "
 :headphones:  ${prefix}play |اسم لاغنيه / رابط الاغنية
 :headphones:  ${prefix}skipللإنتقاال الى الاغنيه التاليه (\اذا كان هناك بقائمة الانتظار\
@@ -268,7 +268,7 @@ client.on('message', message => {
       if (!message.content.startsWith(prefix)) return;
       var args = message.content.split(' ').slice(1);
       var argresult = args.join(' ');
-      if (message.author.id == 461563821417431040) return;
+      if (message.author.id == 461565092329160714) return;
 
 
     if (message.content.startsWith(prefix + 'playing')) {
@@ -300,6 +300,7 @@ client.on('message', message => {
 
 
      });
+
 
 
 client.login(process.env.BOT_TOKEN);
