@@ -238,7 +238,7 @@ if (message.content.startsWith(PREFIX + 'setname')) {
   return message.reply("You Can change the username 2 times per hour");
 }
 if (message.content.startsWith(PREFIX + 'setavatar')) {
-  client.user.setAvatar(argresult, "https://discordapp.com/api/oauth2/authorize?client_id=547966095114633216&permissions=8&scope=bot");
+  client.user.setAvatar(argresult, "https://discordapp.com/api/oauth2/authorize?client_id=461563821417431040&permissions=8&scope=bot");
    message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
 }
 });
