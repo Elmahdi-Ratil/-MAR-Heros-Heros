@@ -1,3 +1,4 @@
+
 const { Client, Util } = require('discord.js');
 const Discord = require("discord.js");
 const YouTube = require('simple-youtube-api');
@@ -219,7 +220,30 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل: **${song.title}**`);
 }
 
+client.on('message', message => {
+  if (!message.content.startsWith(PREFIX)) return;
+  var args = message.content.split(' ').slice(1);
+  var argresult = args.join(' ');
+  if (message.author.id !== "461563821417431040") return;
 
+if (message.content.startsWith(PREFIX + 'setstream')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/sa7tlil");
+	 console.log('test' + argresult);
+    message.channel.sendMessage(`Streaming: **${argresult}`)
+}
+
+if (message.content.startsWith(PREFIX + 'setname')) {
+  client.user.setUsername(argresult).then
+	  message.channel.sendMessage(`Username Changed To **${argresult}**`)
+  return message.reply("You Can change the username 2 times per hour");
+}
+if (message.content.startsWith(PREFIX + 'setavatar')) {
+  client.user.setAvatar(argresult, "https://discordapp.com/api/oauth2/authorize?client_id=547966095114633216&permissions=8&scope=bot");
+   message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
+}
+});
+
+var prefix = '1';
 
 client.on('message', msg => {
 	if (msg.content.startsWith(prefix + 'help')) {
@@ -234,6 +258,7 @@ msg.author.send("Commands ستاتي " + `  **
 **`);
  }
 });
+
 
 
 
