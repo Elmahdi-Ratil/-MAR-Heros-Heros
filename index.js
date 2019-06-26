@@ -1,4 +1,3 @@
-
 const { Client, Util } = require('discord.js');
 const Discord = require("discord.js");
 const YouTube = require('simple-youtube-api');
